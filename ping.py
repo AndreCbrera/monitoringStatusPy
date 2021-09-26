@@ -10,17 +10,17 @@ def pingcheck(ips):
                                 stdout = subprocess.PIPE,
                                 stderr = subprocess.STDOUT)
 
-    stdout, stderr = response.communicate()
+        stdout, stderr = response.communicate()
 
-    if (response.returncode == 0):
-        status = ip.rstrip() + " Online"
-    else:
-        status = ip.rstrip() + " Offline"    
-    print(status)
+        if (response.returncode == 0):
+            status = ip.rstrip() + " Online"
+        else:
+            status = ip.rstrip() + " Offline"    
+        print(status)
 
 def main():
+    #print(ips)
     pingcheck(ips)
-    
 
 if __name__ == "__main__":
     main()
